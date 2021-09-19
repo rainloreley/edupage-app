@@ -17,7 +17,7 @@ export function NavigationController() {
 					options={{
 						headerShown: false,
 						headerLargeTitle: true,
-						title: `${isDark}`,
+						title: 'Home',
 						headerShadowVisible: false,
 						headerTitleAlign: 'left',
 						headerBlurEffect: 'extraLight',
