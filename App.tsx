@@ -1,21 +1,22 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import * as React from 'react';
+import { AppearanceProvider } from 'react-native-appearance';
+import { NavigationController } from './components/NavigationController';
+import { ThemeProvider } from './theme/ThemeProvider';
+import { NativeBaseProvider } from 'native-base';
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+	const nativebaseConfig = {
+		dependencies: {
+			'linear-gradient': require('expo-linear-gradient').LinearGradient,
+		},
+	};
+	return (
+		<NativeBaseProvider config={nativebaseConfig}>
+			<AppearanceProvider>
+				<ThemeProvider>
+					<NavigationController />
+				</ThemeProvider>
+			</AppearanceProvider>
+		</NativeBaseProvider>
+	);
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
