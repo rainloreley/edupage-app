@@ -1,0 +1,3 @@
+[submodule "edupage/api"]
+	path = edupage/api
+	url = git@github.com:rainloreley/EdupageAPI.git
