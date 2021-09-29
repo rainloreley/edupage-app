@@ -82,7 +82,7 @@ const MainView = () => {
 
 	React.useEffect(() => {
 		var d = new Date();
-		d.setDate(d.getDate() + 2);
+		d.setDate(d.getDate() - 2);
 		d.setHours(14);
 		d.setMinutes(0);
 		var weekday: DayOfWeek = d.getDay();
@@ -138,7 +138,7 @@ const MainView = () => {
 				setTitleText('Guten Tag!');
 			} else if (_percentageDone < 1) {
 				setTitleText('Endspurt!');
-			} else if (_percentageDone === 1) {
+			} else if (_percentageDone >= 1) {
 				setTitleText('Fertig!!');
 			}
 
@@ -150,6 +150,8 @@ const MainView = () => {
 			const _nextlessonname =
 				typeof _nextlesson !== 'undefined' ? _nextlesson.classname : undefined;
 			setNextLesson(_nextlessonname);
+		} else {
+			setTitleText('Kein Stundenplan für heute');
 		}
 	}, []);
 

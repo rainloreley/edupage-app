@@ -1,5 +1,6 @@
 import { TimetableDay, DayOfWeek, DayPeriods } from './TimetableDay';
 
+// TODO: remove this stuff when it isn't needed anymore
 const tuesday = new TimetableDay(DayOfWeek.Tuesday, [
 	{
 		classname: '5M1',

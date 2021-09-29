@@ -40,6 +40,7 @@ export enum DayOfWeek {
 }
 
 // standard lesson periods
+// TODO: replace this with edupage
 export class DayPeriods {
 	static readonly ONE: TimetableSlotTimes = {
 		humanReadable: '1',
