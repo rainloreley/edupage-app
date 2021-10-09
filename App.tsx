@@ -8,7 +8,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { MainView } from './views/MainView';
 import { LoginView } from './views/login/LoginView';
 import { LoginCheckManagementView } from './views/managers/LoginCheckManagementView';
-import { Edupage } from './edupage/api';
+import EdupageAPI from './edupage/api';
 
 type RootStackParamList = {
 	Home: undefined;

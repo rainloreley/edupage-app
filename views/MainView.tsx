@@ -151,7 +151,7 @@ const MainView = () => {
 				typeof _nextlesson !== 'undefined' ? _nextlesson.classname : undefined;
 			setNextLesson(_nextlessonname);
 		} else {
-			setTitleText('Kein Stundenplan für heute');
+			setTitleText('Keinen Stundenplan für heute');
 		}
 	}, []);
 

@@ -14,6 +14,7 @@ import { RootStackParamList } from '../../App';
 import { Screen } from '../../components/Screen';
 import { useNavigation } from '@react-navigation/native';
 import { useTheme } from '../../theme/ThemeProvider';
+import GlobalEdupageAPI from '../../edupage/api';
 
 type loginViewProp = NativeStackNavigationProp<RootStackParamList, 'Login'>;
 
@@ -74,6 +75,16 @@ const LoginView = () => {
 						setIsSigningIn(false);
 						setError(err);
 					});*/
+
+				GlobalEdupageAPI.login(enteredUsername, enteredPassword)
+					.then((result) => {
+						navigation.replace('Home');
+					})
+					.catch((err) => {
+						console.log(err);
+						setIsSigningIn(false);
+						setError(`An error occurred: ${err}`);
+					});
 			}
 		} else {
 			setError('Please enter a username and password');
@@ -157,7 +168,6 @@ const LoginView = () => {
 							bg={colors.systemBlue}
 							borderRadius="12px"
 							onPress={() => {
-								console.log(enteredPassword);
 								signIn();
 							}}
 						>
